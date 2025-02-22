@@ -134,7 +134,41 @@ cd /var/www/html
 sudo wget http://wordpress.org/latest.tar.gz
 sudo tar -xzf latest.tar.gz
 ![image](https://github.com/user-attachments/assets/c1141c1a-3637-4903-b9a3-99000597bc5a)
-configuramos la base de datos para worpress
+configuramos la base de datos para worpress: sudo nano wp-config.php
+define( 'DB_NAME', 'nombre_de_la_base_de_datos' );
+define( 'DB_USER', 'nombre_de_usuario' );
+define( 'DB_PASSWORD', 'contraseña_del_usuario' );
+define( 'DB_HOST', 'localhost' );
+Reemplaza los valores entre comillas con la información correcta de tu base de datos RDS:
+
+DB_NAME: El nombre de tu base de datos en RDS
+
+DB_USER: El nombre de usuario de la base de datos
+
+DB_PASSWORD: La contraseña de la base de datos
+
+DB_HOST: El punto de enlace de tu instancia RDS
+Nos conectamos a la instancia de la base de datos.
+![image](https://github.com/user-attachments/assets/d1b34496-d192-42c1-b832-f23a928bb7e4)
+Creamos Base de datos, usuario y contraseña:
+CREATE DATABASE wordpress; 
+CREATE USER 'wordpress_user'@'%' IDENTIFIED BY 'password123'; 
+GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress_user'@'%'; 
+FLUSH PRIVILEGES;
+![image](https://github.com/user-attachments/assets/db39df0e-41db-4f2e-9403-79c3ea0fa931)
+
+Lanzamos la instalación simplemente llamando al servidor web en el navegador:http://44.192.41.132/wordpress
+![image](https://github.com/user-attachments/assets/9e626e0c-81fd-4ebb-8adc-3e3fc23358e7)
+Proporcionamos los datos que nos pide acerca de la base de datos y seguimos el asistente hasta completar la instalación de wordpress.
+![image](https://github.com/user-attachments/assets/c669b5c6-5c2f-4628-86ea-2d1adc50d105)
+creamos el archivo wp-config.php y pegamos lo que wordpres nos proporciona
+![image](https://github.com/user-attachments/assets/b78dc2da-ee86-4370-943b-b65ad824072a)
+![image](https://github.com/user-attachments/assets/ab7f5e48-55dd-4f2f-b863-c60a6555254b)
+terminamos la instalacion
+![image](https://github.com/user-attachments/assets/6c37fe68-bacb-49f7-b193-22303c57726e)
+y tras iniciar sesion 
+![image](https://github.com/user-attachments/assets/81d26030-0fb6-4c91-8cec-2ac6f523a11f)
+
 
 
 

@@ -8,11 +8,15 @@ ejecutamos los contenedores docker run -d --name redis --network red_guestbook -
 docker run -d -p 80:5000 --name guestbook --network red_guestbook iesgn/guestbook
 ![image](https://github.com/user-attachments/assets/8b5755b0-9bee-45de-913e-6c9c6ea78ab5)
 vemos la aplicacion 
+
 ![image](https://github.com/user-attachments/assets/e0688065-8df9-4607-b818-85f9912e8ba7)
+
 ejemplo 3
 docker network create red_wp
 instalacion de wordpres
+
 ![image](https://github.com/user-attachments/assets/2b1d95d5-2ac3-4524-8342-eaa98ef1f075)
+
 creamos los contenedores
 docker run -d --name servidor_mysql \
                 --network red_wp \
